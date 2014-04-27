@@ -17,3 +17,11 @@ There are a few core types of objects:
 **Still to decide**: How will we implement verbs: 
 - text-based with a natural language parser?
 - explicitly listed verbs per prop?
+
+Future ideas
+------------
+- Web interface (e.g. using Bottle)
+  - different backgrounds on a per-scene basis?
+- RPG elements (e.g. player stats)
+- NPCs
+- Combat system???
