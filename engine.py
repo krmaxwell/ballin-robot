@@ -34,7 +34,13 @@ def Scene(object):
 def Prop(object):
 
     def __init__(self, description, location):
-        pass
+        assert isinstance(description, string)
+        # prop should be in a Scene or a Player inventory
+        assert isinstance(location, Scene) or isinstance(location, set)
+        self.description = description
+        self.location = location
+
+    # how do we move these? does the Prop really need to know its location?
 
 
 def Player(object):
