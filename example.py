@@ -1,6 +1,6 @@
 import engine
 
-my_map = engine.Map(set())  # no scenes at first, we will build these
+my_map = engine.Map()
 
 cave_outside = engine.Scene('You see the entrance to a cave in the side of a hill.', set())
 my_map.add_scene(cave_outside)

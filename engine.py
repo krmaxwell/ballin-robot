@@ -1,8 +1,7 @@
 class Map(object):
 
-    def __init__(self, scenes):
-        assert isinstance(scenes, set)
-        self.scenes = scenes
+    def __init__(self):
+        self.scenes = set()
 
     def add_scene(self, scene):
         assert isinstance(scene, Scene)
