@@ -1,16 +1,16 @@
-def Map(object):
+class Map(object):
 
     def __init__(self, scenes):
         assert isinstance(scenes, set)
         self.scenes = scenes
 
-    def add_scene(scene):
+    def add_scene(self, scene):
         assert isinstance(scene, Scene)
         self.scenes.add(scene)
 
 
-def Scene(object):
-    
+class Scene(object):
+
     def __init__(self, description, props):
         assert isinstance(description, string)
         assert isinstance(props, set)
@@ -35,7 +35,7 @@ def Scene(object):
         print self.props
 
 
-def Prop(object):
+class Prop(object):
 
     def __init__(self, description, location):
         assert isinstance(description, string)
@@ -47,7 +47,7 @@ def Prop(object):
     # how do we move these? does the Prop really need to know its location?
 
 
-def Player(object):
+class Player(object):
 
     def __init__(self, location):
         assert isinstance(location, Scene)
