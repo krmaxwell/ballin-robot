@@ -12,7 +12,7 @@ class Map(object):
 class Scene(object):
 
     def __init__(self, description, props):
-        assert isinstance(description, string)
+        assert isinstance(description, str)
         assert isinstance(props, set)
         self.description = description
         self.props = props
@@ -38,7 +38,7 @@ class Scene(object):
 class Prop(object):
 
     def __init__(self, description, location):
-        assert isinstance(description, string)
+        assert isinstance(description, str)
         # prop should be in a Scene or a Player inventory
         assert isinstance(location, Scene) or isinstance(location, set)
         self.description = description
