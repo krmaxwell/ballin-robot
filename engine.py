@@ -30,6 +30,10 @@ def Scene(object):
         assert prop in self.props
         self.props.discard(prop)
 
+    def enter(self):
+        print self.description
+        print self.props
+
 
 def Prop(object):
 
@@ -46,6 +50,12 @@ def Prop(object):
 def Player(object):
 
     def __init__(self, location):
-        pass
+        assert isinstance(location, Scene)
+        self.location = location
+        self.inventory = set()
+        self.location.enter()
 
-    inventory = set()
+    def move(self, new_location):
+        assert new_location in self.location.exits
+        self.location = new_location
+        self.location.enter()
