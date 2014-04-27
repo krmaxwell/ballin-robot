@@ -1,11 +1,34 @@
+import ConfigParser
+
+DEBUG = True
+
 class Map(object):
 
     def __init__(self):
-        self.scenes = set()
+        self.scenes = dict()
 
-    def add_scene(self, scene):
+    def add_scene(self, name, scene):
+        if DEBUG:
+            print "Adding %r in Map.add_scene() as %r" % (name, scene)
+        assert isinstance(name, str)
         assert isinstance(scene, Scene)
-        self.scenes.add(scene)
+        self.scenes[name] = scene
+
+    def load_scenes(self, filename):
+        if DEBUG:
+            print "Loading scenes from %r" % filename
+        assert isinstance(filename, str)
+        map_db = ConfigParser.ConfigParser()
+        map_db.read(filename)
+        for each in map_db.items('Scenes'):
+            s_name, s_desc = each
+            new_scene = Scene(s_desc, set())
+            self.add_scene(s_name, new_scene)
+        for each in map_db.items('Exits'):
+            s_name, e_list = each
+            for next_exit in e_list.split(','):
+                new_scene.add_exit(self.scenes[next_exit])
+        self.start_scene = self.scenes[map_db.get('Player', 'start_scene')]
 
 
 class Scene(object):
@@ -58,3 +81,4 @@ class Player(object):
         assert new_location in self.location.exits
         self.location = new_location
         self.location.enter()
+

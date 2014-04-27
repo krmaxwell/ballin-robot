@@ -1,0 +1,10 @@
+[Scenes]
+cave_outside: You see the entrance to a cave in the side of a hill.
+cave_entrance: Your eyes adjust quickly to the darkness. A small chest sits off to the side.
+
+[Exits]
+cave_outside: cave_entrance
+cave_entrance: cave_outside
+
+[Player]
+start_scene: cave_outside
