@@ -1,7 +1,7 @@
 ballin-robot
 ============
 
-Game engine for text-based adventure games (experimental toy only).
+Game engine for text-based adventure games (experimental toy only). Partly works for [LPTHW Exercise 45](http://learnpythonthehardway.org/book/ex45.html).
 
 Architecture
 ------------
