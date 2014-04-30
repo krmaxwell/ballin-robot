@@ -63,6 +63,7 @@ class Scene(object):
                 print "- %s" % prop
         else:
             print "Nothing notable here."
+        print self.exits
 
 
 class Prop(object):
