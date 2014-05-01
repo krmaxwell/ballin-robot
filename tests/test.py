@@ -23,3 +23,10 @@ def test_insert_prop():
     treasure_map = engine.Prop('a treasure map', my_map.scenes['cave_outside'])
     assert treasure_map.location == my_map.scenes['cave_outside']
     assert treasure_map in my_map.scenes['cave_outside'].props
+
+def test_pickup_prop():
+    treasure_map = engine.Prop('a treasure map', my_map.scenes['cave_outside'])
+    me = engine.Player(my_map.start_scene)
+    me.pickup_prop(treasure_map)
+    assert treasure_map in me.inventory
+    assert treasure_map.location == me.inventory

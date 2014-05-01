@@ -91,3 +91,9 @@ class Player(object):
         assert new_location in self.location.exits
         self.location = new_location
         self.location.enter()
+
+    def pickup_prop(self, prop):
+        assert isinstance(prop, Prop)
+        self.inventory.add(prop)
+        prop.location = self.inventory
+        print "You picked up %s" % prop.description
