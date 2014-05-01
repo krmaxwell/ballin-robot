@@ -74,6 +74,7 @@ class Prop(object):
         assert isinstance(location, Scene) or isinstance(location, set)
         self.description = description
         self.location = location
+        self.location.add_prop(self)
 
     # how do we move these? does the Prop really need to know its location?
 
